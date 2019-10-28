@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Transform mouseTestObject = null;
+    Transform model;
 
     public Camera characterCamera;
     CharacterController characterController;
@@ -21,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        model = transform.Find("Model");
     }
 
     void Update()
@@ -37,14 +39,32 @@ public class PlayerMovement : MonoBehaviour
 
         moveDirection.x = Input.GetAxis("Horizontal") * speed;
 
+
+        if (Input.GetAxis ("Horizontal") < 0)
+
+        {
+            Vector3 velocity = Vector3.zero;
+
+            Vector3 desiredAngles = new Vector3(model.localEulerAngles.x, 90, model.localEulerAngles.z);
+            model.localEulerAngles = (Vector3.SmoothDamp(model.localEulerAngles, desiredAngles, ref velocity, 1 * Time.deltaTime));
+
+        }
+
+        else if (Input.GetAxis("Horizontal") > 0)
+
+        {
+            Vector3 velocity = Vector3.zero;
+
+
+            Vector3 desiredAngles = new Vector3(model.localEulerAngles.x, 270, model.localEulerAngles.z);
+            model.localEulerAngles = (Vector3.SmoothDamp(model.localEulerAngles, desiredAngles, ref velocity, 1 * Time.deltaTime));
+
+        }
+
         //moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
         //moveDirection *= speed;
 
-        //This controls the direction the player is facing left or right
-        //Disabled ATM since the character will face the same direction as the camera if not moving.
-        //if (moveDirection != Vector3.zero)
-        //   transform.rotation = Quaternion.LookRotation(moveDirection);
-
+        //This controls the direction the player is facing - left or right, dependant on the direction they're going
 
         if (characterController.isGrounded)
         {

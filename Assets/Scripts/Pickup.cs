@@ -20,9 +20,4 @@ public class Pickup : MonoBehaviour
         }
 
     }
-
- //   public void ScoreAdd()
-//    {
- //              GameObject.Find("ScoreManager").GetComponent<ScoreManager>().AddToScore(scoreValue);
- //   }
 }

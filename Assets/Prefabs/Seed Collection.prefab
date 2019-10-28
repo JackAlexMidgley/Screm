@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7114437042388097487}
   - component: {fileID: 6627698661042967365}
   - component: {fileID: 1134711810674383992}
-  - component: {fileID: 3808496916428182625}
+  - component: {fileID: 8846717810688237103}
   m_Layer: 0
   m_Name: Seed Collection
   m_TagString: Untagged
@@ -97,7 +97,7 @@ CapsuleCollider:
   m_Height: 4.250107
   m_Direction: 1
   m_Center: {x: 1.6630207, y: 0.43289942, z: 0}
---- !u!114 &3808496916428182625
+--- !u!114 &8846717810688237103
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,10 +106,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1147645850866079469}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9814303f9cbb7c4ca43c8387af5a2a3, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a17fa13f9e07d049b8ff0567e8911de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 5
+  timeValue: 5
 --- !u!1 &1325978850863710357
 GameObject:
   m_ObjectHideFlags: 0
