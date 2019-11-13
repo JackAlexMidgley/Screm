@@ -3,6 +3,7 @@
 public class NewPauseMenu : MonoBehaviour
 {
     public GameObject pauseCanvas;
+    public GameObject scoreCanvas;
 
     public void Update()
     {
@@ -16,5 +17,6 @@ public class NewPauseMenu : MonoBehaviour
     {
             Time.timeScale = 0.0f;
             pauseCanvas.SetActive(true);
+            scoreCanvas.SetActive(false);
     }
 }

@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - enemy
+  - Lives
+  - DontDestroyOnLoad
+  - Pickup
   layers:
   - Default
   - TransparentFX

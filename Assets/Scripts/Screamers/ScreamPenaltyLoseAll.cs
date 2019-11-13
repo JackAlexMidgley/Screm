@@ -1,0 +1,13 @@
+﻿using UnityEngine;
+
+public class ScreamPenaltyLoseAll : Health
+
+{
+    public int penalty;
+    public override void Die()
+    {
+        GameObject.Find("ScoreManager").GetComponent<ScoreManager>().ResetScore();
+        GameObject.Find("ScoreManager").GetComponent<TimerScript>().SubtractFromTime(penalty);
+        base.Die();
+    }
+}
